@@ -1,12 +1,8 @@
 # ShowCollector
 
-<<<<<<< HEAD
-The script requires Python3 and netmiko to automatically install the dependecies do: pip3 install -r requirements.txt
-=======
 Simple script to do a *show* command on a bunch of Cisco IOS or NX-OS switches and create files that capture the output.
 
-The script requires Python3 and netmiko.
->>>>>>> 588b204da1cb9759771eff9ec3ab7cd4934a5f45
+The script requires Python3 and netmiko to automatically install the dependecies do: pip3 install -r requirements.txt
 
 Usage:
 
