@@ -1,6 +1,6 @@
 ######
 # Author: Diego S. Gancedo <dgancedo@gmail.com>
-# Desc: Script to connect nexus switches over ssh and execute a command passed the script generate an output file using the hostname of the switch + the command
+# Desc: Script to connect nexus or ios switches over ssh and execute a command passed the script generate an output file using the hostname of the switch + the command
 # Requirements: Netmiko
 ######
 
