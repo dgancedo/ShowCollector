@@ -61,7 +61,7 @@ if __name__ == "__main__":
          switchname = net_connect.send_command("show hostname")
          print("Executing "+ values[4] + " on " + switchname)
          show = net_connect.send_command(values[4])
-         filename = switchname.replace(" ","_") + values[3].replace(" ", "_") + ".txt"
+         filename = switchname.replace(" ","_") + values[4].replace(" ", "_") + ".txt"
          f = open(filename,'w')
          f.write(show)
          f.close
