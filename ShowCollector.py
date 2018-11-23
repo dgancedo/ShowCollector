@@ -58,7 +58,10 @@ if __name__ == "__main__":
          switches.append(values[2])
       for switch in switches:
          net_connect = ConnectHandler(device_type=values[3], ip=switch, username=values[0], password=values[1]) 
-         switchname = net_connect.send_command("show hostname")
+         if values[3] == "nxos":
+            switchname = net_connect.send_command("show hostname")
+         else:
+            switchname = net_connect.send_command("show running-config | i hostname").split(" ")[1]
          print("Executing "+ values[4] + " on " + switchname)
          show = net_connect.send_command(values[4])
          filename = switchname.replace(" ","_") + values[4].replace(" ", "_") + ".txt"
