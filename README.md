@@ -1,5 +1,7 @@
 # ShowCollector
 
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/dgancedo/ShowCollector)
+
 Simple script to do a *show* command on a bunch of Cisco IOS or NX-OS switches and create files that capture the output.
 
 The script requires Python3 and netmiko to automatically install the dependecies do: pip3 install -r requirements.txt
