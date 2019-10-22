@@ -26,4 +26,3 @@ Examples:
 
 * ShowCollector.py --user john --password C1sco12345 --switch list.txt -type nxos --command "show ip bgp neighbor"
 
-..
