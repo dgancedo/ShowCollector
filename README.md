@@ -25,3 +25,4 @@ Examples:
 * ShowCollector.py --user john --password ask --switch 1.1.1.1,2.2.2.2 -type ios --command "show running-config"
 
 * ShowCollector.py --user john --password C1sco12345 --switch list.txt -type nxos --command "show ip bgp neighbor"
+
