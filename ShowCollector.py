@@ -51,7 +51,9 @@ if __name__ == "__main__":
       if ".txt" in values[2]:
          s = open(values[2],'r')
          for line in s:
-            switches.append(line.replace("\n",""))
+            line = line.replace("\r","")
+            line = line.replace("\n","")
+            switches.append(line)
       elif "," in values[2]:
          switches = values[2].split(",")
       else:
@@ -62,6 +64,7 @@ if __name__ == "__main__":
             switchname = net_connect.send_command("show hostname")
          else:
             switchname = net_connect.send_command("show running-config | i hostname").split(" ")[1]
+         switchname = switchname.replace("\n","")
          print("Executing "+ values[4] + " on " + switchname)
          show = net_connect.send_command(values[4])
          filename = switchname.replace(" ","_") + "-" + values[4].replace(" ", "_") + ".txt"
