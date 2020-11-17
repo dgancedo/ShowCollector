@@ -59,14 +59,23 @@ if __name__ == "__main__":
       else:
          switches.append(values[2])
       for switch in switches:
-         net_connect = ConnectHandler(device_type=values[3], ip=switch, username=values[0], password=values[1]) 
+         try:
+            net_connect = ConnectHandler(device_type=values[3], ip=switch, username=values[0], password=values[1]) 
+         except:
+            filename = switch + ".txt"
+            show = "Can't connect to switch: " + switch
+            print(show)
+            f = open(filename,'w')
+            f.write(show)
+            f.close
+            next
          if values[3] == "nxos":
-            switchname = net_connect.send_command("show hostname")
+            switchname = net_connect.send_command("show hostname", max_loops=5000)
          else:
-            switchname = net_connect.send_command("show running-config | i hostname").split(" ")[1]
+            switchname = net_connect.send_command("show running-config | i hostname", max_loops=5000).split(" ")[1]
          switchname = switchname.replace("\n","")
          print("Executing "+ values[4] + " on " + switchname)
-         show = net_connect.send_command(values[4])
+         show = net_connect.send_command(values[4], max_loops=5000)
          filename = switchname.replace(" ","_") + "-" + values[4].replace(" ", "_") + ".txt"
          f = open(filename,'w')
          f.write(show)
